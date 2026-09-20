@@ -1,0 +1,10 @@
+# Defaults for all machines. Per-machine overrides take precedence over these and
+# live in ~/.config/chezmoi/chezmoi.toml under [data] (e.g. [data.monitors]).
+#
+# Monitors are device-specific: update them for each new machine and run
+# `chezmoi apply` afterwards.
+
+[monitors]
+    MONITOR1 = "eDP-1"
+    MONITOR2 = "DP-1"
+    MONITOR3 = ""

@@ -7,9 +7,10 @@ EDITOR       = "gnome-text-editor --new-window"
 CALCULATOR   = "gnome-calculator"
 
 -- Monitors
-MONITOR1 = "{{ .monitors.MONITOR1 }}"
-MONITOR2 = "{{ .monitors.MONITOR2 }}"
-MONITOR3 = "{{ .monitors.MONITOR3 }}"
+-- Defaults come from .chezmoidata.toml; override per machine in ~/.config/chezmoi/chezmoi.toml
+MONITOR1 = "{{ .monitors.MONITOR1 | default "eDP-1" }}"
+MONITOR2 = "{{ .monitors.MONITOR2 | default "DP-1" }}"
+MONITOR3 = "{{ .monitors.MONITOR3 | default "" }}"
 PRIMARY_MONITOR = MONITOR1
 
 -- Workspaces
