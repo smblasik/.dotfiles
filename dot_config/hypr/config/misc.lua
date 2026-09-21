@@ -16,7 +16,11 @@ hl.config({
         vrr = 3,
     },
     render = {
-        direct_scanout = 2,
+        -- direct_scanout was 2; reduced to 0 as a resume-freeze workaround
+        -- (i915/eDP + scanout can wedge the output after lid-close suspend,
+        -- leaving a frozen frame with no lock/login UI). Re-enable (set 2)
+        -- if the freeze does not reproduce after a few lid cycles.
+        direct_scanout = 0,
     },
     xwayland = {
         force_zero_scaling = true
